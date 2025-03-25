@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WheeltheSpin</title>
+</head>
+<body>
+    
+</body>
+</html>
+<html>
+    <link rel="stylesheet" href="style.css">
+<head>
+    <title>Home</title>
+    <h1>hello!</h1>
+    <body>
+        <p class="text">
+            hahahahaha.
+        </p>
+        <div>
+            <h1 id="wordinslot"></h1>
+            <input class="rbox" type="text" placeholder="Slot 1" id="slot1" name="slot1">
+            
+        </div>
+     
+    </body>
+    
+    <div>
+        
+        <button class="addbutton"  onclick = "addFn()">
+            Add
+        </button>
+        
+        <button class="addbutton1" onclick = "runFN()">
+            Run
+        </button>
+        
+    </div>
+</head>
+</html>
+
+<div id = "option"> 
+      <h1 id="word"></h1>
+      
+ </div>
+
+
+
+
+<script>
+    const slotword = [];
+    let x = 1;
+    let value;
+    function addFn() {
+        var inputElement = document.getElementById('slot1');
+            inputElement.placeholder = `Slot ${x}`;
+        value = document.getElementById("slot1").value;
+        document.getElementById("word").textContent = value;
+        //document.body.innerHTML("option") += '<h1 id="word"></h1>';
+        slotword.push(value);
+        console.log(slotword);
+  x++;
+  document.getElementById("slot1").placeholder = `Slot ${x}`;
+   
+
+    }
+    
+   
+   
+</script>
+
+
+<script>
+    let selected;
+    function runFN() {
+        let random = Math.floor(Math.random() * slotword.length);
+        selected = slotword[random];
+        console.log(selected);
+        document.getElementById("wordinslot").textContent = "Selected :" + selected;
+    }
+</script>
